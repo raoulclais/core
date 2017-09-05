@@ -95,6 +95,7 @@ final class ApiPlatformExtension extends Extension implements PrependExtensionIn
         $this->registerBundlesConfiguration($bundles, $config, $loader);
         $this->registerCacheConfiguration($container);
         $this->registerDoctrineExtensionConfiguration($container, $config);
+        $this->registerGraphQLExtensionConfiguration($container, $config, $loader);
     }
 
     /**
@@ -352,6 +353,11 @@ final class ApiPlatformExtension extends Extension implements PrependExtensionIn
             $container->removeDefinition('api_platform.doctrine.orm.query_extension.eager_loading');
             $container->removeDefinition('api_platform.doctrine.orm.query_extension.filter_eager_loading');
         }
+    }
+
+    private function registerGraphQLExtensionConfiguration(ContainerBuilder $container, array $config, XmlFileLoader $loader)
+    {
+        $loader->load('graphql.xml');
     }
 
     /**

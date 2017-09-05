@@ -109,6 +109,7 @@ final class ApiLoader extends Loader
     private function loadExternalFiles(RouteCollection $routeCollection)
     {
         $routeCollection->addCollection($this->fileLoader->load('api.xml'));
+        $routeCollection->addCollection($this->fileLoader->load('graphql.xml'));
 
         if (isset($this->formats['jsonld'])) {
             $routeCollection->addCollection($this->fileLoader->load('jsonld.xml'));

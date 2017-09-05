@@ -3,6 +3,7 @@ default:
     default:
       contexts:
         - 'FeatureContext': { doctrine: '@doctrine' }
+        - 'GraphQLContext'
         - 'HydraContext'
         - 'SwaggerContext'
         - 'Behat\MinkExtension\Context\MinkContext'
@@ -28,6 +29,7 @@ coverage:
       contexts:
       contexts:
         - 'FeatureContext': { doctrine: '@doctrine' }
+        - 'GraphQLContext'
         - 'HydraContext'
         - 'SwaggerContext'
         - 'CoverageContext'
